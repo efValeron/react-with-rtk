@@ -1,11 +1,10 @@
-import {combineReducers} from "redux";
-import {moneyReducer} from "../moneyReducer.ts";
 import {configureStore} from "@reduxjs/toolkit";
+import {counterReducer} from "./counterSlice.ts";
 
 export const store = configureStore({
-  reducer: combineReducers({
-    money: moneyReducer
-  })
+  reducer: {
+    counter: counterReducer
+  }
 })
 
 export type RootState = ReturnType<typeof store.getState>
